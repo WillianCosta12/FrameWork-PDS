@@ -1,50 +1,14 @@
-class Endereco{
+import mongoose from "mongoose";
 
-  #rua;
-  #cidade;
-  #bairro;
-  #numero;
+const endereco = new mongoose.Schema({
+  
+  rua: String,
+  cidade: String,
+  bairro: String,
+  numero: Number
 
-  constructor(rua, cidade, bairro, numero) {
-      this.#rua = rua;
-      this.#cidade = cidade;
-      this.#bairro = bairro;
-      this.#numero = numero;
-  }
+})
 
-
-  get rua() {
-    return this.#rua;
-  }
-
-  set rua(rua) {
-    this.#rua = rua;
-  }
-
-  get cidade() {
-    return this.#cidade;
-  }
-
-  set cidade(cidade) {
-    this.#cidade = cidade;
-  }
-
-  get bairro() {
-    return this.#bairro;
-  }
-
-  set bairro(bairro) {
-    this.#bairro = bairro;
-  }
-
-  get numero() {
-    return this.#numero;
-  }
-
-  set numero(numero) {
-    this.#numero = numero;
-  }
-
-}
+const Endereco = mongoose.model('Endereco', endereco);
 
 export default Endereco;

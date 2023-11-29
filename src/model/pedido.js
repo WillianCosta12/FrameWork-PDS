@@ -1,19 +1,12 @@
-class Pedido{
+import mongoose from "mongoose";
+import Produto from "./produto";
 
-    #produtos;
+const pedido = new mongoose.Schema({
+  
+  produtos: [Produto]
 
-    constructor(produtos){
-        this.#produtos = produtos;
-    }
+})
 
-    get produtos(){
-        return this.#produtos;
-    }
-
-    set produtos(produtos){
-        this.#produtos = produtos;
-    }
-
-}
+const Pedido = mongoose.model('Pedido', pedido);
 
 export default Pedido;
