@@ -1,9 +1,14 @@
 import mongoose from "mongoose";
-import Produto from "./produto";
+import Produto from "./produto.js";
 
 const pedido = new mongoose.Schema({
   
-  produtos: [Produto]
+  produtos:[{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Produto',
+    required: true
+  }],
+  endereco: String
 
 })
 
